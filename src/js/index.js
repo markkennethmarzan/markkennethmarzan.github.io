@@ -1,8 +1,8 @@
 var	menu = document.querySelector('.menu');
 var	menuBar = document.querySelector('.menuBar');
 var closeBtn = document.querySelector('.close');
-var hourToggle = document.querySelector('.hourToggle');	
-var overlay = document.querySelector('.overlay');
+var hourToggle = document.querySelector('.hourToggle');
+var hours = document.querySelector('.hours');
 
 //if the user use a browser that is not supported by the browser
 //then it will throw an error. This line of code will check if
@@ -18,19 +18,14 @@ if ('serviceWorker' in navigator) {
 
 menuBar.addEventListener('click', function(){
   menu.className += ' open';
-	overlay.className += ' open';
 })
 
 
 closeBtn.addEventListener('click', function(){
   menu.className = 'menu';
-	overlay.className = 'overlay';
  
 })
 
-window.addEventListener('click', function(event){
-  if(event.target === overlay){
-    menu.className = 'menu';
-    overlay.className = 'overlay';
-  }
+hourToggle.addEventListener('click', function(){
+  hours.className += ' open';
 })
